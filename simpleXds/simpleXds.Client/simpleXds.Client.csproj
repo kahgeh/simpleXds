@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+    <LangVersion>7.1</LangVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Protobuf Include="../../data-plane-api/envoy/api/v2/**/*.proto" GrpcServices="Client" ProtoRoot="../../data-plane-api;../../protoc-gen-validate;../../googleapis;../../client_model;../../opencensus-proto/src;../../opencensus-proto/src/opencensus/proto/trace/v1;../../opencensus-proto/src/opencensus/proto/resource/v1" />
+    <Protobuf Include="../../data-plane-api/envoy/type/**/*.proto" GrpcServices="Client" ProtoRoot="../../data-plane-api;../../protoc-gen-validate;../../googleapis;../../client_model;../../opencensus-proto/src;../../opencensus-proto/src/opencensus/proto/trace/v1;../../opencensus-proto/src/opencensus/proto/resource/v1" />
+    <Content Include="@(Protobuf)" LinkBase="" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Google.Api.CommonProtos" Version="1.6.0" />
+    <PackageReference Include="Google.Protobuf" Version="3.7.0" />
+    <PackageReference Include="Grpc.Core" Version="1.19.0-pre1" />
+    <PackageReference Include="Grpc.Tools" Version="1.19.0-pre1" PrivateAssets="All" />
+  </ItemGroup>
+
+</Project>
