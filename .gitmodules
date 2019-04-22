@@ -10,3 +10,6 @@
 [submodule "opencensus-proto"]
 	path = opencensus-proto
 	url = https://github.com/census-instrumentation/opencensus-proto.git
+[submodule "protoc-gen-validate"]
+	path = protoc-gen-validate
+	url = https://github.com/envoyproxy/protoc-gen-validate.git
